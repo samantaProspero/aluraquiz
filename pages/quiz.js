@@ -9,6 +9,7 @@ import AlternativesForm from '../src/components/AlternativesForm';
 import Button from '../src/components/Button';
 
 function ResultWidget({ results }) {
+
   return (
     <Widget>
       <Widget.Header>
@@ -16,6 +17,7 @@ function ResultWidget({ results }) {
       </Widget.Header>
 
       <Widget.Content>
+        {/* <h1>Mandou bem {name}! </h1> */}
         <p>
           Total de acertos: 
           {' '}
@@ -64,6 +66,7 @@ function QuestionWidget({
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
+  
   return (
     <Widget>
       <Widget.Header>
