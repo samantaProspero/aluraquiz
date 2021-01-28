@@ -6,6 +6,8 @@ import QuizLogo from '../src/components/QuizLogo'
 import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
+import Input from '../src/components/Input'
+import Button from '../src/components/Button'
 import Head from 'next/head'
 import useRouter from 'next/router'
 
@@ -47,16 +49,19 @@ export default function Home() {
               event.preventDefault();
               router.push(`/quiz?name=${name}`)
             }}>
-              <input 
+              <Input
+                name="nomeDoUsuario"
                 placeholder="Diga seu nome: "
                 onChange= { (event)=> setName(event.target.value)}
+                value={name}
                 />
-              <button 
+              <Button 
                 type="submit"
                 disabled={name.length === 0}
               > 
-                Jogar {name}
-              </button>
+                Jogar 
+                {name}
+              </Button>
             </form>
             <p>{db.description}</p>
           </Widget.Content>
